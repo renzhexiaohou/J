@@ -72,13 +72,13 @@ shinyUI(
                     column(2,
                            sliderInput("ka_pk", label = "Ka (1/h)", min = 0.1, max = 1, step = 0.05, value = c(0.32)))
                 ),
-                absolutePanel(
-                    top = 80, right = 250, width = 150, height = 10, draggable = TRUE,
-                    HTML(
-                        paste0("<strong>t<sub>", "1/2", "</sub> = <code style='color:#ec4c3c;background-color:#F8F9F9'>",
-                                textOutput(outputId = "halflife", inline = T), "</code> hr</strong>")
-                         )
-                ),
+                # absolutePanel(
+                #     top = 80, right = 250, width = 150, height = 10, draggable = TRUE,
+                #     HTML(
+                #         paste0("<strong>t<sub>", "1/2", "</sub> = <code style='color:#ec4c3c;background-color:#F8F9F9'>",
+                #                 textOutput(outputId = "halflife", inline = T), "</code> hr</strong>")
+                #          )
+                # ),
                 
                 # absolutePanel(
                 #     top = 63, right = 250, width = 150, height = 10, draggable = TRUE,
@@ -88,58 +88,59 @@ shinyUI(
                 #     )
                 # ),
                 absolutePanel(
-                    top = 63, right = 250, width = 150, height = 10, draggable = TRUE,
+                    top = 63, right = 230, width = 170, height = 10, draggable = TRUE,
                     HTML(
-                        paste0("<strong>C<sub>", "max", "</sub> = <code style='color:#ec4c3c;background-color:#F8F9F9'>",
+                        paste0("<strong>C<sub>", "max_last", "</sub> = <code style='color:#ec4c3c;background-color:#F8F9F9'>",
                                textOutput(outputId = "pkcmax1", inline = T), "</code> ng/mL</strong>")
                     )
                 ),
                 absolutePanel(
-                    top = 63, right = 100, width = 150, height = 10, draggable = TRUE,
+                    top = 63, right = 60, width = 170, height = 10, draggable = TRUE,
                     HTML(
-                        paste0("<strong>C<sub>", "min", "</sub> = <code style='color:#ec4c3c;background-color:#F8F9F9'>",
+                        paste0("<strong>C<sub>", "min_last", "</sub> = <code style='color:#ec4c3c;background-color:#F8F9F9'>",
                                textOutput(outputId = "pkcmin1", inline = T), "</code> ng/mL</strong>")
                     )
                 ),
                 absolutePanel(
-                    top = 63, right = 400, width = 200, height = 10, draggable = TRUE,
+                    top = 63, right = 410, width = 220, height = 10, draggable = TRUE,
                     HTML(
-                        paste0("<strong>AUC<sub>", "tau", "</sub> = <code style='color:#ec4c3c;background-color:#F8F9F9'>",
+                        paste0("<strong>AUC<sub>", "tau_last", "</sub> = <code style='color:#ec4c3c;background-color:#F8F9F9'>",
                                textOutput(outputId = "pkauc1", inline = T), "</code> hr*ng/mL</strong>")
                     )
                 ),
                 
+                fluidRow(
+                    # absolutePanel(
+                        # top = 600, right = 800, width = 200, height = 10, draggable = TRUE,
+                        column(2,
+                               numericInput("t_start", label = "NCA_lower_t1 (h)", value = c(0))),
+                    # ),
+                    # absolutePanel(
+                        # top = 600, right = 600, width = 200, height = 10, draggable = TRUE,
+                        column(2,
+                               numericInput("t_end", label = "NCA_upper_t2 (h)", value = c(24)))
+                    # )
+                ),
                 
                 absolutePanel(
-                    top = 600, right = 800, width = 200, height = 10, draggable = TRUE,
-                    column(6,
-                           numericInput("t_start", label = "NCA_lower (h)", value = c(0)))
-                ),
-                absolutePanel(
-                    top = 600, right = 600, width = 200, height = 10, draggable = TRUE,
-                    column(6,
-                           numericInput("t_end", label = "NCA_upper (h)", value = c(24)))
-                ),
-                
-                absolutePanel(
-                    top = 600, right = 250, width = 150, height = 10, draggable = TRUE,
+                    top = 630, right = 270, width = 170, height = 10, draggable = TRUE,
                     HTML(
-                        paste0("<strong>C<sub>", "max", "</sub> = <code style='color:#ec4c3c;background-color:#F8F9F9'>",
+                        paste0("<strong>C<sub>", "max_t1t2", "</sub> = <code style='color:#ec4c3c;background-color:#F8F9F9'>",
                                textOutput(outputId = "pkcmax2", inline = T), "</code> ng/mL</strong>")
                     )
                 ),
                 absolutePanel(
-                    top = 600, right = 100, width = 150, height = 10, draggable = TRUE,
+                    top = 630, right = 90, width = 170, height = 10, draggable = TRUE,
                     HTML(
-                        paste0("<strong>C<sub>", "min", "</sub> = <code style='color:#ec4c3c;background-color:#F8F9F9'>",
+                        paste0("<strong>C<sub>", "min_t1t2", "</sub> = <code style='color:#ec4c3c;background-color:#F8F9F9'>",
                                textOutput(outputId = "pkcmin2", inline = T), "</code> ng/mL</strong>")
                     )
                 ),
                 
                 absolutePanel(
-                    top = 600, right = 400, width = 200, height = 10, draggable = TRUE,
+                    top = 630, right = 450, width = 220, height = 10, draggable = TRUE,
                     HTML(
-                        paste0("<strong>AUC<sub>", "tau", "</sub> = <code style='color:#ec4c3c;background-color:#F8F9F9'>",
+                        paste0("<strong>AUC<sub>", "tau_t1t2", "</sub> = <code style='color:#ec4c3c;background-color:#F8F9F9'>",
                                textOutput(outputId = "pkauc2", inline = T), "</code> hr*ng/mL</strong>")
                     )
                 ),

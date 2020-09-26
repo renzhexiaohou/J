@@ -1449,7 +1449,7 @@ shinyServer(function(input, output) {
         ggplot(PLTSUM, aes(x = time/24 + 1, y = plt, group = subject)) + 
             # geom_line(alpha=0.2) +
             scale_x_continuous(breaks = seq(1, 28*12+1, 7)) +
-            scale_y_continuous(breaks = c(0, 25, 50, 75, 100, 150 , 200, 250, 300, 400, 500)) +
+            scale_y_continuous(breaks = c(0, 25, 50, 75, 100, 150 , 200, 250, 300, 400, 500), limits = c(0, 235)) +
             # scale_x_continuous(limits = c(input$obs[1], input$obs[2]), breaks = seq(0,100*24,24)) +
             # scale_y_continuous(limits = c(0, 500)) +
             
@@ -1711,7 +1711,7 @@ shinyServer(function(input, output) {
         plotplt <- ggplot(PLT, aes(x = time/24 + 1, y = plt, group = subject)) + 
             # geom_line(alpha=0.2) +
             scale_x_continuous(breaks = seq(1, 28*12+1, 7)) +
-            scale_y_continuous(breaks = c(0, 25, 50, 75, 100, 150 , 200, 250, 300, 400, 500)) +
+            scale_y_continuous(breaks = c(0, 25, 50, 75, 100, 150 , 200, 250, 300, 400, 500), limits = c(0, 235)) +
             # scale_x_continuous(limits = c(input$obs[1], input$obs[2]), breaks = seq(0,100*24,24)) +
             # scale_y_continuous(limits = c(0, 500)) +
             

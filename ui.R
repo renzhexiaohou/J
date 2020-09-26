@@ -410,8 +410,8 @@ shinyUI(
                                sliderInput("interval2_pop", label = "dose2 interval (h)", min = 0, max = 168, step = 12, value = c(24))
                         ),
                         column(3,
-                               sliderInput("n1_pop", label = "dose1 times", min = 1, max = 28*6, step = 1, value = c(2)),
-                               sliderInput("n2_pop", label = "dose2 times", min = 1, max = 28*6, step = 1, value = c(5))
+                               sliderInput("n1_pop", label = "dose1 times", min = 1, max = 28*3, step = 1, value = c(2)),
+                               sliderInput("n2_pop", label = "dose2 times", min = 1, max = 28*3, step = 1, value = c(5))
                         )
                     ),
                     

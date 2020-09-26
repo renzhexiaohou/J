@@ -551,7 +551,7 @@ shinyUI(
                     ),
                     absolutePanel(
                         top = 290, right = 325, width = 160, height = 10, draggable = FALSE,
-                        sliderInput("idv_pop", label = NULL, min = 0, max = 1000, step = 10, value = 300)
+                        sliderInput("idv_pop", label = NULL, min = 0, max = 1000, step = 100, value = 300)
                     ),
                     
                     absolutePanel(

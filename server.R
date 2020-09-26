@@ -1579,7 +1579,7 @@ shinyServer(function(input, output) {
             data_set(dos) %>%
             mrgsim(set.seed(2020),
                    end = dur_tgi,
-                   delta = 0.5)
+                   delta = 12)
         
         # browser()
         TUMOR <- out@data %>%
